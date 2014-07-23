@@ -1,5 +1,4 @@
-
-var styles = [
+var partials = [
   "mixins",
 
   "normalize",
@@ -48,13 +47,13 @@ module.exports = function (content) {
   this.cacheable(true);
   var config = this.exec(content, this.resourcePath);
   var start =
-      "@import          \"~bootstrap/less/variables.less\";\n"
-    + "@icon-font-path: \"~bootstrap/fonts/\";\n"
-    + "@import          \"./bootstrap.config.less\";\n";
-  source = start + styles.filter(function (style) {
-    return config.styles[style];
-  }).map(function (style) {
-    return "@import \"~bootstrap/less/" + style + ".less\";";
+      "@import          \"~bootstrap-sass/assets/stylesheets/bootstrap/variables\";\n"
+    + "@icon-font-path: \"~bootstrap-sass/assets/fonts/bootstrap/\";\n"
+    + "@import          \"./bootstrap-sass.config.scss\";\n";
+  source = start + partials.filter(function (partial) {
+    return config.styles[partial];
+  }).map(function (partial) {
+    return "@import \"~bootstrap-sass/assets/stylesheets/bootstrap/" + partial;
   }).join("\n");
   return source;
 }

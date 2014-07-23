@@ -1,7 +1,9 @@
 bootstrap-webpack
 =================
 
-bootstrap package for webpack
+Bootstrap configuration and loading package for webpack, using `bootstrap-sass`.
+
+Credit for the original goes to Scott Bleck (@bline).
 
 
 Usage
@@ -29,20 +31,20 @@ module.exports = {
 To use the complete bootstrap package including styles and scripts with the default settings:
 
 ``` javascript
-require("bootstrap-webpack");
+require("bootstrap-sass-webpack");
 ```
 
 ### Custom configuration
 
-You can configurate bootstrap-webpack with two configuration files:
+You can configurate bootstrap-sass-webpack with two configuration files:
 
-* `bootstrap.config.js`
-* `bootstrap.config.less`
+* `bootstrap-sass.config.js`
+* `bootstrap-sass.config.less`
 
 Add both files next to each other to your project. And:
 
 ``` javascript
-require("bootstrap-webpack!./bootstrap.config.js");
+require("bootstrap-sass-webpack!./bootstrap-sass.config.js");
 ```
 
 Or simple add it as entry point to your `webpack.config.js`:
@@ -50,13 +52,13 @@ Or simple add it as entry point to your `webpack.config.js`:
 ``` javascript
 module.exports = {
   entry: [
-    "bootstrap-webpack!./bootstrap.config.js",
+    "bootstrap-sass-webpack!./bootstrap-sass.config.js",
     "your-existing-entry-point"
   ]
 };
 ```
 
-#### `bootstrap.config.js`
+#### `bootstrap-sass.config.js`
 
 Example:
 
@@ -79,7 +81,7 @@ module.exports = {
 };
 ```
 
-#### `bootstrap.config.less`
+#### `bootstrap-sass.config.less`
 
 Write less code. I. e. overwrite the default colors or sizes.
 
