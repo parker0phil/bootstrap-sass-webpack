@@ -39,12 +39,12 @@ require("bootstrap-sass-webpack");
 You can configurate bootstrap-sass-webpack with two configuration files:
 
 * `bootstrap-sass.config.js`
-* `bootstrap-sass.config.less`
+* `bootstrap-sass.config.scss`
 
-Add both files next to each other to your project. And:
+Add both files *next to each other* in your project. Then:
 
 ``` javascript
-require("bootstrap-sass-webpack!./bootstrap-sass.config.js");
+require("bootstrap-sass-webpack!./path/to/bootstrap-sass.config.js");
 ```
 
 Or simple add it as entry point to your `webpack.config.js`:
@@ -52,7 +52,7 @@ Or simple add it as entry point to your `webpack.config.js`:
 ``` javascript
 module.exports = {
   entry: [
-    "bootstrap-sass-webpack!./bootstrap-sass.config.js",
+    "bootstrap-sass-webpack!./path/tobootstrap-sass.config.js",
     "your-existing-entry-point"
   ]
 };
@@ -81,13 +81,15 @@ module.exports = {
 };
 ```
 
-#### `bootstrap-sass.config.less`
+#### `bootstrap-sass.config.scss`
 
-Write less code. I. e. overwrite the default colors or sizes.
+Imported after Bootstrap's default variables, but before anything else.
+
+You may customize Bootstrap here.
 
 Example:
 
-``` less
+``` scss
 @font-size-base:          24px;
 
 @btn-default-color:              #444;
