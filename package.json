@@ -2,7 +2,7 @@
   "name": "bootstrap-sass-webpack",
   "description": "bootstrap-sass (v3.2) package for webpack",
   "main": "index.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "loader": "index.loader.js",
   "keywords": [
     "bootstrap",
